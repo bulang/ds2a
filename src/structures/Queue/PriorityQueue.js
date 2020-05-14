@@ -1,4 +1,6 @@
-
+/**
+ * 队列元素
+ */
 class QueueItem{
     constructor(element,priority){
         this.element = element;
