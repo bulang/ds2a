@@ -1,13 +1,15 @@
 /*
  * @Author: liu wang wang
  * @Date: 2020-05-13 11:36:26
- * @LastEditTime: 2020-05-14 15:30:49
+ * @LastEditTime: 2020-05-15 10:14:37
  * @LastEditors: liu wang wang
  * @Description: 单向链表封装
  * @FilePath: \DataStructuresAndAlgorithms\src\structures\LinkedList\SingleLinkedList.js
  */
 import _ from 'lodash';
-
+/**
+ * 节点类
+ */
 class Node{
     constructor(element,next){
         this.element = element;
@@ -152,6 +154,19 @@ class SingleLinkedList {
     // 判断链表是否包含元素
     contains(element){
         return this.indexOf(element) >= 0;
+    }
+    // 连接两个链表
+    concat(linkedList){
+        let current = this.head;
+        if(!current){
+            this.head = linkedList;
+        }
+        while(current.getNext()){
+            current = current.getNext();
+        }
+        current.setNext(linkedList.head);
+        this.length += linkedList.size();
+        return this.length
     }
     // 向链表头添加新元素
     addFirst(element){

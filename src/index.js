@@ -1,7 +1,7 @@
 /*
  * @Author: liu wang wang
  * @Date: 2020-05-13 11:30:26
- * @LastEditTime: 2020-05-14 15:32:23
+ * @LastEditTime: 2020-05-15 13:25:48
  * @LastEditors: liu wang wang
  * @Description: 数据结构测试
  * @FilePath: \DataStructuresAndAlgorithms\src\index.js
@@ -10,6 +10,7 @@
 // import Queue from './structures/Queue/Queue'
 // import PriorityQueue from './structures/Queue/PriorityQueue'
 import SingleLinkedList from './structures/LinkedList/SingleLinkedList'
+import DoubleLinkedList from './structures/LinkedList/DoubleLinkedList'
 //栈实现十进制转二进制
 // const dec2bin = (num)=>{
 //     const s = new Stack();
@@ -46,14 +47,16 @@ import SingleLinkedList from './structures/LinkedList/SingleLinkedList'
 // console.log(pq);
 // 单向链表
 const singleLinkedList = new SingleLinkedList()
-singleLinkedList.addFirst('a');
-singleLinkedList.addFirst('b');
-singleLinkedList.addFirst('c');
-singleLinkedList.addFirst('d');
-singleLinkedList.addLast(1);
-singleLinkedList.addLast(2);
-singleLinkedList.addLast(3);
-singleLinkedList.addLast(4);
+// const singleLinkedList2 = new SingleLinkedList()
+// singleLinkedList.addFirst('a');
+// singleLinkedList.addFirst('b');
+// singleLinkedList.addFirst('c');
+// singleLinkedList.addFirst('d');
+// singleLinkedList2.addLast(1);
+// singleLinkedList2.addLast(2);
+// singleLinkedList2.addLast(3);
+// singleLinkedList2.addLast(4);
+// singleLinkedList.concat(singleLinkedList2);
 // console.log(singleLinkedList.removeFirst());
 // console.log(singleLinkedList.removeFirst());
 // console.log(singleLinkedList.removeLast());
@@ -76,7 +79,10 @@ singleLinkedList.addLast(4);
 // console.log(singleLinkedList.indexOf(2));
 // console.log(singleLinkedList.remove(1));
 // console.log(singleLinkedList.contains(1));
-console.log(singleLinkedList.getFirst());
-console.log(singleLinkedList.getLast());
-console.log(singleLinkedList.toString());
-console.log(singleLinkedList);
+// console.log(singleLinkedList.getFirst());
+// console.log(singleLinkedList.getLast());
+// console.log(singleLinkedList.toString());
+// console.log(singleLinkedList);
+const doubleLinkedList = new DoubleLinkedList();
+doubleLinkedList.insert(0, 'a');
+console.log(doubleLinkedList.toString());
