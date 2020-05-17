@@ -34,26 +34,20 @@ class Node{
 class SingleLinkedList {
     constructor(){
         this.length = 0;
-        this.head = null;
+        this.head = new Node(null,null);
     }
     // 插入元素
     insert(position,element){
         if(position<0 || position>this.length){
             return false;
         }
-        if(position===0 && this.length===0){
-            this.head = new Node(element,null)
-        }else{
+        let current = this.head;
+        while(position>0){
+            current = current.getNext();
             position--;
-            let prev = this.head;
-            while(position>0){
-                prev = prev.getNext();
-                position--;
-            }
-            const current = prev.getNext();
-            const node = new Node(element,current);
-            prev.setNext(node);
         }
+        const node = new Node(element, current.getNext());
+        current.setNext(node);
         this.length += 1;
         return true;
     }
@@ -63,7 +57,7 @@ class SingleLinkedList {
             return null;
         }
         let current = this.head;
-        while(position>0){
+        while(position>=0){
             current = current.getNext();
             position--;
         }
@@ -75,7 +69,7 @@ class SingleLinkedList {
             return false;
         }
         let current = this.head;
-        while(position>0){
+        while(position>=0){
             current = current.getNext();
             position--;
         }
@@ -86,7 +80,6 @@ class SingleLinkedList {
     remove(element){
         const _index = this.indexOf(element);
         if(_index>=0 && _.isEqual(this.removeAt(_index), element)){
-            this.length -= 1;
             return true;
         }else{
             return false;
@@ -97,28 +90,21 @@ class SingleLinkedList {
         if(position<0 || position>=this.length){
             return null
         }
-        let removedElement = null;
-        if(position===0){
-            removedElement = this.head.getEle();
-            this.head = this.head.getNext();
-        }else{
-            let prev = this.head;
+        let current = this.head;
+        let prev = null;
+        while(position>=0){
+            prev = current;
+            current = current.getNext();
             position--;
-            while(position>0){
-                prev = prev.getNext();
-                position--;
-            }
-            const current = prev.getNext();
-            prev.setNext(current.getNext());
-            removedElement = current.getEle();
         }
+        prev.setNext(current.getNext());
         this.length -= 1;
-        return removedElement;
+        return current.getEle();
     }
     // 返回元素在链表中的索引位置
     indexOf(element){
         let index = 0;
-        let current = this.head;
+        let current = this.head.getNext();
         while(current){
             if(_.isEqual(element,current.getEle())){
                 return index;
@@ -143,13 +129,13 @@ class SingleLinkedList {
     }
     // 内容转化为字符串
     toString(){
-        let res = '';
+        let res = [];
         let current = this.head;
-        do {
-            res += current && current.getEle().toString()+' ';
-            current = current && current.getNext();
-        }while(current!==null)
-        return res;
+        while(current.getNext()){
+            res.push(current.getNext().getEle().toString());
+            current = current.getNext();
+        }
+        return res.toString();
     }
     // 判断链表是否包含元素
     contains(element){
@@ -158,9 +144,6 @@ class SingleLinkedList {
     // 连接两个链表
     concat(linkedList){
         let current = this.head;
-        if(!current){
-            this.head = linkedList;
-        }
         while(current.getNext()){
             current = current.getNext();
         }
@@ -170,27 +153,19 @@ class SingleLinkedList {
     }
     // 向链表头添加新元素
     addFirst(element){
-        const current = this.head;
+        const current = this.head.getNext();
         const node = new Node(element,null);
-        if(current){
-            node.setNext(current);
-        }
-        this.head = node;
+        node.setNext(current);
+        this.head.setNext(node);
         this.length += 1;
         return true;
     }
     // 向链表尾添加新元素
     addLast(element){
         let current = this.head;
-        const node = new Node(element, null);
         let index = 0;
-        if(!current){
-            this.head = node;
-            this.length += 1;
-            return index;
-        }
-        index++;
-        while(current.getNext()!==null){
+        const node = new Node(element, null);
+        while(current.getNext()){
             current = current.getNext();
             index++;
         }
@@ -200,46 +175,39 @@ class SingleLinkedList {
     }
     // 移除链表头一个元素
     removeFirst(){
-        const current = this.head;
-        if(!current){
+        if(this.length===0){
             return null;
         }
-        this.head = current.getNext();
+        const current = this.head.getNext();
+        this.head.setNext(current.getNext());
         this.length -= 1;
         return current.getEle();
     }
     // 移除链表尾一个元素
     removeLast(){
-        let current = this.head;
-        if(!current){
+        if(this.length===0){
             return null;
         }
-        if(!current.getNext()){
-            this.head = null;
-        }else{
-            let prev = current;
-            while(current.getNext()){
-                prev = current;
-                current = current.getNext();
-            }
-            prev.setNext(null);
+        let current = this.head;
+        let prev = null;
+        while(current.getNext()){
+            prev = current;
+            current = current.getNext();
         }
+        prev.setNext(null);
         this.length -= 1;
         return current.getEle();
     }
     // 获取链表头部一个元素
     getFirst(){
-        if(this.head){
-            return this.head.getEle();
+        if(this.head.getNext()){
+            return this.head.getNext().getEle();
         }
         return null;
     }
     // 获取链表尾部一个元素
     getLast(){
         let current = this.head;
-        if(!current){
-            return null;
-        }
         while(current.getNext()){
             current = current.getNext();
         }
