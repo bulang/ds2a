@@ -47,12 +47,12 @@ import DoubleLinkedList from './structures/LinkedList/DoubleLinkedList'
 // console.log(pq);
 // 单向链表
 const singleLinkedList = new SingleLinkedList()
-// const singleLinkedList2 = new SingleLinkedList()
-// singleLinkedList.addFirst('a');
+const singleLinkedList2 = new SingleLinkedList()
+singleLinkedList.addFirst('a');
 // singleLinkedList.addFirst('b');
 // singleLinkedList.addFirst('c');
 // singleLinkedList.addFirst('d');
-// singleLinkedList2.addLast(1);
+singleLinkedList.addLast(1);
 // singleLinkedList2.addLast(2);
 // singleLinkedList2.addLast(3);
 // singleLinkedList2.addLast(4);
@@ -67,22 +67,52 @@ const singleLinkedList = new SingleLinkedList()
 // singleLinkedList.insert(3,'d');
 // singleLinkedList.insert(2,'e');//abecd
 // singleLinkedList.insert(1,'f');//afbecd
-// console.log(singleLinkedList.toString());
-// console.log(singleLinkedList.get(1));
+console.log(singleLinkedList.toString());
+console.log(singleLinkedList.get(0));
 // singleLinkedList.set(0,1);
 // singleLinkedList.set(1,2);
 // console.log(singleLinkedList.toString());
-// console.log(singleLinkedList.removeAt(0));
+// console.log(singleLinkedList.removeAt(2));
 // console.log(singleLinkedList.removeAt(3));
 // console.log(singleLinkedList.toString());
 // console.log(singleLinkedList.size());
 // console.log(singleLinkedList.indexOf(2));
 // console.log(singleLinkedList.remove(1));
 // console.log(singleLinkedList.contains(1));
-// console.log(singleLinkedList.getFirst());
-// console.log(singleLinkedList.getLast());
+console.log(singleLinkedList.getFirst());
+console.log(singleLinkedList.getLast());
 // console.log(singleLinkedList.toString());
 // console.log(singleLinkedList);
+// singleLinkedList.clear();
+// console.log(singleLinkedList);
 const doubleLinkedList = new DoubleLinkedList();
+const doubleLinkedList2 = new DoubleLinkedList();
 doubleLinkedList.insert(0, 'a');
-console.log(doubleLinkedList.toString());
+doubleLinkedList.insert(1, 'b');
+doubleLinkedList.insert(2, 'c');
+doubleLinkedList.insert(3, 'd');
+doubleLinkedList.insert(4, 'e');
+doubleLinkedList.insert(5, 'f');
+doubleLinkedList2.addLast('1');
+doubleLinkedList2.addLast('2');
+doubleLinkedList2.addLast('3');
+doubleLinkedList2.addLast('4');
+doubleLinkedList2.addLast('5');
+// doubleLinkedList.insert(2, 1);
+// doubleLinkedList.insert(6, 2)
+// console.log(doubleLinkedList.get(7));
+// doubleLinkedList.set(0, 'z');
+// doubleLinkedList.set(7, 'y');
+// console.log(doubleLinkedList.indexOf('y'));
+// console.log(doubleLinkedList.indexOf('b'));
+// console.log(doubleLinkedList.toString());
+// console.log(doubleLinkedList.removeAt(6));
+// console.log(doubleLinkedList.toString());
+// // console.log(doubleLinkedList.clear());
+// doubleLinkedList.addFirst('w');
+// doubleLinkedList.addLast('w');
+// console.log(doubleLinkedList.removeFirst());
+// doubleLinkedList.removeLast();
+// doubleLinkedList.concat(doubleLinkedList2);
+// console.log(doubleLinkedList.toString());
+
