@@ -1,7 +1,7 @@
 /*
  * @Author: liu wang wang
  * @Date: 2020-05-13 11:30:26
- * @LastEditTime: 2020-05-15 13:25:48
+ * @LastEditTime: 2020-05-18 16:26:41
  * @LastEditors: liu wang wang
  * @Description: 数据结构测试
  * @FilePath: \DataStructuresAndAlgorithms\src\index.js
@@ -53,10 +53,10 @@ singleLinkedList.addFirst('a');
 // singleLinkedList.addFirst('c');
 // singleLinkedList.addFirst('d');
 singleLinkedList.addLast(1);
-// singleLinkedList2.addLast(2);
-// singleLinkedList2.addLast(3);
+singleLinkedList2.addLast(2);
+singleLinkedList2.addLast(3);
 // singleLinkedList2.addLast(4);
-// singleLinkedList.concat(singleLinkedList2);
+singleLinkedList.concat(singleLinkedList2);
 // console.log(singleLinkedList.removeFirst());
 // console.log(singleLinkedList.removeFirst());
 // console.log(singleLinkedList.removeLast());
@@ -68,7 +68,7 @@ singleLinkedList.addLast(1);
 // singleLinkedList.insert(2,'e');//abecd
 // singleLinkedList.insert(1,'f');//afbecd
 console.log(singleLinkedList.toString());
-console.log(singleLinkedList.get(0));
+// console.log(singleLinkedList.get(0));
 // singleLinkedList.set(0,1);
 // singleLinkedList.set(1,2);
 // console.log(singleLinkedList.toString());
@@ -79,8 +79,8 @@ console.log(singleLinkedList.get(0));
 // console.log(singleLinkedList.indexOf(2));
 // console.log(singleLinkedList.remove(1));
 // console.log(singleLinkedList.contains(1));
-console.log(singleLinkedList.getFirst());
-console.log(singleLinkedList.getLast());
+// console.log(singleLinkedList.getFirst());
+// console.log(singleLinkedList.getLast());
 // console.log(singleLinkedList.toString());
 // console.log(singleLinkedList);
 // singleLinkedList.clear();
@@ -115,4 +115,5 @@ doubleLinkedList2.addLast('5');
 // doubleLinkedList.removeLast();
 // doubleLinkedList.concat(doubleLinkedList2);
 // console.log(doubleLinkedList.toString());
+// console.log(doubleLinkedList.backString());
 

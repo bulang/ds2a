@@ -1,7 +1,7 @@
 /*
  * @Author: liu wang wang
  * @Date: 2020-05-13 11:36:44
- * @LastEditTime: 2020-05-15 13:29:42
+ * @LastEditTime: 2020-05-18 13:47:00
  * @LastEditors: liu wang wang
  * @Description: 双向链表的封装
  * @FilePath: \DataStructuresAndAlgorithms\src\structures\LinkedList\DoubleLinkedList.js
@@ -252,7 +252,16 @@ class DoubleLinkedList{
         }
         return res.toString();
     }
+    // 反向字符串
+    backString(){
+        let res = [];
+        let current = this.tail.getPrev();
+        while(current.getPrev()){
+            res.push(current.getEle().toString());
+            current = current.getPrev();
+        }
+        return res.toString();
+    }
 }
-
 
 export default DoubleLinkedList;

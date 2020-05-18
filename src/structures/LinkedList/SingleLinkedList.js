@@ -1,7 +1,7 @@
 /*
  * @Author: liu wang wang
  * @Date: 2020-05-13 11:36:26
- * @LastEditTime: 2020-05-15 10:14:37
+ * @LastEditTime: 2020-05-18 16:34:45
  * @LastEditors: liu wang wang
  * @Description: 单向链表封装
  * @FilePath: \DataStructuresAndAlgorithms\src\structures\LinkedList\SingleLinkedList.js
@@ -147,14 +147,14 @@ class SingleLinkedList {
         while(current.getNext()){
             current = current.getNext();
         }
-        current.setNext(linkedList.head);
+        current.setNext(linkedList.head.getNext());
         this.length += linkedList.size();
         return this.length
     }
     // 向链表头添加新元素
     addFirst(element){
-        const current = this.head.getNext();
         const node = new Node(element,null);
+        const current = this.head.getNext();
         node.setNext(current);
         this.head.setNext(node);
         this.length += 1;
