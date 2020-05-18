@@ -15,11 +15,11 @@
 
    1. 单向链表
 
-      ![单向链表](E:\myOftenUse\DataStructuresAndAlgorithms\static\singleLinkedList.png)
+      ![单向链表](../static/singleLinkedList.png)
 
    2. 双向链表
 
-      ![双向链表](E:\myOftenUse\DataStructuresAndAlgorithms\static\doubleLinkedList.png)
+      ![双向链表](../static/doubleLinkedList.png)
 
 #### 单向链表
 
@@ -608,4 +608,54 @@ class DoubleLinkedList{
     }
 }
 ```
+
+> 代码清单：`insert(position, element)`方法实现
+
+**功能与单链表一样；**
+
+**思路：遍历链表找到要插入位置的节点`current`，然后构造一个前驱指针域指向`current`节点的上一个节点后继指针域指向`current`的新的节点，最后设置`current`节点的上一个节点的后继指针域指向新节点，`current`节点的前驱指针域指向新的节点**
+
+实现步骤如下：
+
+1. 边界判断，越界直接返回`false`;
+2. 判断`position`的位置，如果在链表的前半部分则从前往后遍历，反之从后往前遍历;
+3. 找到要插入的位置后按照思路里提供的方法构造新的节点，并设置关联节点的指针域;
+4. 链表长度+1；
+
+```javascript
+...
+
+// 给指定位置插入元素
+insert(position, element){
+    if(position<0 || position>this.length){
+        return false;
+    }
+    if(position <= this.length/2){
+        let current = this.head;
+        while(position>0){
+            current = current.getNext();
+            position--;
+        }
+        const node = new Node(element, current, current.getNext());
+        current.getNext().setPrev(node);
+        current.setNext(node);
+    }else{
+        let current = this.tail;
+        let descPosition = this.length - position;
+        while(descPosition>0){
+            current = current.getPrev();
+            descPosition--;
+        }
+        const node = new Node(element, current.getPrev(), current);
+        current.getPrev().setNext(node);
+        current.setPrev(node);
+    }
+    this.length += 1;
+    return true;
+}
+
+...
+```
+
+
 
