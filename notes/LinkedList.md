@@ -551,4 +551,61 @@ getLast(){
 
 #### 双向链表
 
-双向链表有两个指针，一个在头部（`head`），一个在尾部（`tail`） ；双向链表的节点有两个指针域（前驱与后继）分别指向上一个节点与下一个节点；
+**双向链表有两个指针，一个在头部（`head`），一个在尾部（`tail`） ；双向链表的节点有两个指针域（前驱与后继）分别指向上一个节点与下一个节点；**
+
+| 接口           | 说明                     |
+| -------------- | ------------------------ |
+| `backString()` | 返回链表的反向数据字符串 |
+| `...`          | 其他接口与单向链表一样   |
+
+> 代码清单：双向链表节点`Node`
+
+定义三个属性分别为节点的数据域（`element`）与两个指针域（`prev`、`next`），并定义这三个属性的 `getter` 与 `setter`；
+
+```javascript
+class Node{
+    // 通过构造函数定义属性
+    constructor(element, prev, next){
+        this.element = element;
+        this.prev = prev;
+        this.next = next;
+    }
+    // 定义舒心的getter/setter;
+    setEle(element){
+        this.element = element;
+    }
+    getEle(){
+        return this.element;
+    }
+    setPrev(prev){
+        this.prev = prev;
+    }
+    getPrev(){
+        return this.prev;
+    }
+    setNext(next){
+        this.next = next;
+    }
+    getNext(){
+        return this.next;
+    }
+}
+```
+
+> 代码清单：双向链表结构（`DoubleLinkedList`）
+
+**双向链表的头部节点与尾部节点均不存储数据，实例化链表时给`head` 声明一个空节点，给`tail` 声明一个空节点。然后把`head`节点的后继指针域指向`tail`节点，把`tail` 节点的前驱指针域指向`head` 节点；声明链表的初识长度为0；**
+
+```javascript
+class DoubleLinkedList{
+    constructor(){
+        // 头尾节点为空节点，不存储数据
+        this.head = new Node(null, null, null);
+        this.tail = new Node(null, null, null);
+        this.head.setNext(this.tail);
+        this.tail.setPrev(this.head);
+        this.length = 0;
+    }
+}
+```
+
