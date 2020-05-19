@@ -1,5 +1,5 @@
 ### 队列
-
+> 源码目录：/src/structures/Queue
 #### 使用`javascript`封装队列
 
 **特点：受限的线性数据结构，先进先出**
