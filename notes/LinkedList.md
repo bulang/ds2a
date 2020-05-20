@@ -571,7 +571,7 @@ class Node{
         this.prev = prev;
         this.next = next;
     }
-    // 定义舒心的getter/setter;
+    // 定义属性的getter/setter;
     setEle(element){
         this.element = element;
     }

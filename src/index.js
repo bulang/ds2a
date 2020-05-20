@@ -1,16 +1,17 @@
 /*
  * @Author: liu wang wang
  * @Date: 2020-05-13 11:30:26
- * @LastEditTime: 2020-05-18 16:26:41
+ * @LastEditTime: 2020-05-20 17:45:32
  * @LastEditors: liu wang wang
  * @Description: 数据结构测试
  * @FilePath: \DataStructuresAndAlgorithms\src\index.js
  */
-// import Stack from './structures/Stack/Stack'
-// import Queue from './structures/Queue/Queue'
-// import PriorityQueue from './structures/Queue/PriorityQueue'
+import Stack from './structures/Stack/Stack'
+import Queue from './structures/Queue/Queue'
+import PriorityQueue from './structures/Queue/PriorityQueue'
 import SingleLinkedList from './structures/LinkedList/SingleLinkedList'
 import DoubleLinkedList from './structures/LinkedList/DoubleLinkedList'
+import SetO from './structures/Set'
 //栈实现十进制转二进制
 // const dec2bin = (num)=>{
 //     const s = new Stack();
@@ -46,17 +47,17 @@ import DoubleLinkedList from './structures/LinkedList/DoubleLinkedList'
 // pq.enqueue({name:'ww'},2);
 // console.log(pq);
 // 单向链表
-const singleLinkedList = new SingleLinkedList()
-const singleLinkedList2 = new SingleLinkedList()
-singleLinkedList.addFirst('a');
+// const singleLinkedList = new SingleLinkedList()
+// const singleLinkedList2 = new SingleLinkedList()
+// singleLinkedList.addFirst('a');
 // singleLinkedList.addFirst('b');
 // singleLinkedList.addFirst('c');
 // singleLinkedList.addFirst('d');
-singleLinkedList.addLast(1);
-singleLinkedList2.addLast(2);
-singleLinkedList2.addLast(3);
+// singleLinkedList.addLast(1);
+// singleLinkedList2.addLast(2);
+// singleLinkedList2.addLast(3);
 // singleLinkedList2.addLast(4);
-singleLinkedList.concat(singleLinkedList2);
+// singleLinkedList.concat(singleLinkedList2);
 // console.log(singleLinkedList.removeFirst());
 // console.log(singleLinkedList.removeFirst());
 // console.log(singleLinkedList.removeLast());
@@ -67,7 +68,7 @@ singleLinkedList.concat(singleLinkedList2);
 // singleLinkedList.insert(3,'d');
 // singleLinkedList.insert(2,'e');//abecd
 // singleLinkedList.insert(1,'f');//afbecd
-console.log(singleLinkedList.toString());
+// console.log(singleLinkedList.toString());
 // console.log(singleLinkedList.get(0));
 // singleLinkedList.set(0,1);
 // singleLinkedList.set(1,2);
@@ -85,19 +86,20 @@ console.log(singleLinkedList.toString());
 // console.log(singleLinkedList);
 // singleLinkedList.clear();
 // console.log(singleLinkedList);
-const doubleLinkedList = new DoubleLinkedList();
-const doubleLinkedList2 = new DoubleLinkedList();
-doubleLinkedList.insert(0, 'a');
-doubleLinkedList.insert(1, 'b');
-doubleLinkedList.insert(2, 'c');
-doubleLinkedList.insert(3, 'd');
-doubleLinkedList.insert(4, 'e');
-doubleLinkedList.insert(5, 'f');
-doubleLinkedList2.addLast('1');
-doubleLinkedList2.addLast('2');
-doubleLinkedList2.addLast('3');
-doubleLinkedList2.addLast('4');
-doubleLinkedList2.addLast('5');
+// 测试双向链表
+// const doubleLinkedList = new DoubleLinkedList();
+// const doubleLinkedList2 = new DoubleLinkedList();
+// doubleLinkedList.insert(0, 'a');
+// doubleLinkedList.insert(1, 'b');
+// doubleLinkedList.insert(2, 'c');
+// doubleLinkedList.insert(3, 'd');
+// doubleLinkedList.insert(4, 'e');
+// doubleLinkedList.insert(5, 'f');
+// doubleLinkedList2.addLast('1');
+// doubleLinkedList2.addLast('2');
+// doubleLinkedList2.addLast('3');
+// doubleLinkedList2.addLast('4');
+// doubleLinkedList2.addLast('5');
 // doubleLinkedList.insert(2, 1);
 // doubleLinkedList.insert(6, 2)
 // console.log(doubleLinkedList.get(7));
@@ -116,4 +118,7 @@ doubleLinkedList2.addLast('5');
 // doubleLinkedList.concat(doubleLinkedList2);
 // console.log(doubleLinkedList.toString());
 // console.log(doubleLinkedList.backString());
-
+// 测试集合
+const set = new SetO();
+set.add({'a':'b'});
+console.log(set.toString());
