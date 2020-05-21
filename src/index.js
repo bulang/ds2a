@@ -1,7 +1,7 @@
 /*
  * @Author: liu wang wang
  * @Date: 2020-05-13 11:30:26
- * @LastEditTime: 2020-05-20 17:45:32
+ * @LastEditTime: 2020-05-21 17:23:11
  * @LastEditors: liu wang wang
  * @Description: 数据结构测试
  * @FilePath: \DataStructuresAndAlgorithms\src\index.js
@@ -119,6 +119,17 @@ import SetO from './structures/Set'
 // console.log(doubleLinkedList.toString());
 // console.log(doubleLinkedList.backString());
 // 测试集合
-const set = new SetO();
+const mSet = new SetO();
+const set = new Set();
+const set2 = new Set();
 set.add({'a':'b'});
-console.log(set.toString());
+set.add(1);
+set.add([1,2,3]);
+set2.add(1);
+set2.add(2);
+// console.log(set.keys());
+// console.log(set.values());
+console.log(set)
+console.log(set2)
+console.log(mSet.isSuperset(set, set2))
+// console.log(set.toString());

@@ -1,7 +1,7 @@
 /*
  * @Author: liu wang wang
  * @Date: 2020-05-20 17:23:55
- * @LastEditTime: 2020-05-21 11:27:50
+ * @LastEditTime: 2020-05-21 17:32:30
  * @LastEditors: liu wang wang
  * @Description: 数据结构集合
  * @FilePath: \DataStructuresAndAlgorithms\src\structures\Set\index.js
@@ -28,7 +28,7 @@ class SetO {
     size(){
         return this.items.size();
     }
-    // 判断是否为子集
+    // 判断是否为子集 (传入Set对象的实例，而非SetO的实例)
     isSuperset(set, subset){
         for(let element of subset){
             if(!set.has(element)){
@@ -37,7 +37,7 @@ class SetO {
         }
         return true;
     }
-    // 并集；
+    // 并集； (传入Set对象的实例，而非SetO的实例)
     union(setA, setB){
         let _union = new Set(setA);
         for(let element of setB){
@@ -45,7 +45,7 @@ class SetO {
         }
         return _union;
     }
-    // 交集
+    // 交集 (传入Set对象的实例，而非SetO的实例)
     intersection(setA, setB){
         let _intersection = new Set();
         for(let element of setB){
@@ -55,7 +55,7 @@ class SetO {
         }
         return _intersection;
     }
-    // 差集
+    // 差集 (传入Set对象的实例，而非SetO的实例)
     difference(setA, setB){
         let _difference = new Set(setA);
         for(let element of setA){
@@ -65,7 +65,7 @@ class SetO {
         }
         return _difference;
     }
-    // 对称差
+    // 对称差 (传入Set对象的实例，而非SetO的实例)
     symmetricDifference(setA, setB){
         let _symmetric = new Set(setA);
         for(let element of setB){
