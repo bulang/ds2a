@@ -1,5 +1,5 @@
 ### 集合
-> 源码目录：/src/structures/Queue
+> 源码目录：/src/structures/Set
 
 **ES6中有提供Set对象类型，基础的接口不做演示，演示一下集合的相关计算**
 > 代码清单：`isSuperset(set, subset)`方法实现
