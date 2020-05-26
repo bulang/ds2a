@@ -1,7 +1,7 @@
 /*
  * @Author: liu wang wang
  * @Date: 2020-05-13 11:30:26
- * @LastEditTime: 2020-05-21 17:23:11
+ * @LastEditTime: 2020-05-26 15:51:01
  * @LastEditors: liu wang wang
  * @Description: 数据结构测试
  * @FilePath: \DataStructuresAndAlgorithms\src\index.js
@@ -12,6 +12,7 @@ import PriorityQueue from './structures/Queue/PriorityQueue'
 import SingleLinkedList from './structures/LinkedList/SingleLinkedList'
 import DoubleLinkedList from './structures/LinkedList/DoubleLinkedList'
 import SetO from './structures/Set'
+import HashTable from './structures/HashTable'
 //栈实现十进制转二进制
 // const dec2bin = (num)=>{
 //     const s = new Stack();
@@ -119,17 +120,67 @@ import SetO from './structures/Set'
 // console.log(doubleLinkedList.toString());
 // console.log(doubleLinkedList.backString());
 // 测试集合
-const mSet = new SetO();
-const set = new Set();
-const set2 = new Set();
-set.add({'a':'b'});
-set.add(1);
-set.add([1,2,3]);
-set2.add(1);
-set2.add(2);
+// const mSet = new SetO();
+// const set = new Set();
+// const set2 = new Set();
+// set.add({'a':'b'});
+// set.add(1);
+// set.add([1,2,3]);
+// set2.add(1);
+// set2.add(2);
 // console.log(set.keys());
 // console.log(set.values());
-console.log(set)
-console.log(set2)
-console.log(mSet.isSuperset(set, set2))
+// console.log(set)
+// console.log(set2)
+// console.log(mSet.isSuperset(set, set2))
 // console.log(set.toString());
+// 测试哈希表
+// const hashTable = new HashTable();
+// hashTable.put('name','bulang');
+// hashTable.put(5,18);
+// hashTable.put(60,18);
+// hashTable.put(90,18);
+// hashTable.put('height',180);
+// hashTable.put('abc','1');
+// hashTable.put('cba','12');
+// hashTable.put('bcd','123');
+// hashTable.put('dba','1234');
+// hashTable.put('name','lalala')
+// console.log(hashTable.get('name'));
+// console.log(hashTable.get('age'));
+// console.log(hashTable.get('height'));
+// console.log(hashTable.get('abc'));
+// console.log(hashTable.delete('age'))
+// console.log(hashTable.delete('name'))
+// console.log(hashTable.delete('dba'))
+// console.log(hashTable.delete('bcd'))
+// console.log(hashTable.delete('cba'))
+// console.log(hashTable.size());
+// console.log(hashTable.isEmpty());
+// console.log(hashTable.delete('height'))
+// console.log(hashTable.delete('abc'))
+// console.log(hashTable.delete('height'))
+// console.log(hashTable.size());
+// console.log(hashTable.isEmpty());
+// console.log(hashTable);
+
+function com(i,j){
+    if(j===0){
+        return 1;
+    }else if(i===j){
+        return 1
+    }else{
+        return com(i-1,j-1)+com(i-1,j)
+    }
+}
+
+function fn(num){
+    for(let i=0; i<num; i++){
+        for(let j = 0; j<= i; j++){
+            document.write(com(i,j)+" ");
+        }
+        document.write('行数：'+ i + '</br>');
+    }
+}
+fn(14);
+console.log(com(13,6));
