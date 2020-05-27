@@ -1,5 +1,5 @@
 ### 哈希表
-> 项目地址：/src/structures/HashTable
+> 源码目录：/src/structures/HashTable
 
 #### 理论知识大解析
 > 概念解析：哈希表
@@ -37,6 +37,21 @@
 均匀分配哈希地址，减少冲突的产生；
 
 #### 哈希表实现（`javascript`）
+
+| 接口             | 说明 |
+| ---------------- | ---- |
+| `getHashCode(key)` | 获取`key`对应的哈希值     |
+|  `put(key, value)`       | 存储或修改数据 |
+| `get(key)` | 根据关键字获取数据 |
+| `delete(key)` | 根据关键字删除数据 |
+| `isPrime(num)` | 判断是不是质数 |
+| `getPrime(num)` | 获取大于等于num的最近的一个质数 |
+| `resize(limit)` | 对哈希表扩容或者缩容 |
+| `size()` | 获取哈希表的数据量 |
+| `isEmpty()` | 判断哈希表是否为空 |
+
+
+
 > 代码清单：HashTable类构造器
 
 1. `table`用来承载哈希表；
