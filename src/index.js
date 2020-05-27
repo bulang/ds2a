@@ -1,7 +1,7 @@
 /*
  * @Author: liu wang wang
  * @Date: 2020-05-13 11:30:26
- * @LastEditTime: 2020-05-27 09:18:03
+ * @LastEditTime: 2020-05-27 15:59:37
  * @LastEditors: liu wang wang
  * @Description: 数据结构测试
  * @FilePath: \DataStructuresAndAlgorithms\src\index.js
@@ -135,13 +135,13 @@ import HashTable from './structures/HashTable'
 // console.log(mSet.isSuperset(set, set2))
 // console.log(set.toString());
 // 测试哈希表
-// const hashTable = new HashTable();
-// hashTable.put('name','bulang');
-// hashTable.put(5,18);
-// hashTable.put(60,18);
-// hashTable.put(90,18);
-// hashTable.put('height',180);
-// hashTable.put('abc','1');
+const hashTable = new HashTable();
+hashTable.put('name','bulang');
+hashTable.put(5,18);
+hashTable.put(60,18);
+hashTable.put(90,18);
+hashTable.put('height',180);
+hashTable.put('abc','1');
 // hashTable.put('cba','12');
 // hashTable.put('bcd','123');
 // hashTable.put('dba','1234');
@@ -162,4 +162,4 @@ import HashTable from './structures/HashTable'
 // console.log(hashTable.delete('height'))
 // console.log(hashTable.size());
 // console.log(hashTable.isEmpty());
-// console.log(hashTable);
+console.log(hashTable);

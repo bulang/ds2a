@@ -1,7 +1,7 @@
 /*
  * @Author: liu wang wang
  * @Date: 2020-05-25 15:48:19
- * @LastEditTime: 2020-05-27 11:52:36
+ * @LastEditTime: 2020-05-27 16:04:27
  * @LastEditors: liu wang wang
  * @Description: 哈希表（javascript描述）
  * @FilePath: \DataStructuresAndAlgorithms\src\structures\HashTable\index.js
@@ -83,8 +83,8 @@ class HashTable{
     // 判断是不是质数
     isPrime(num){
         let sqrt = ~~Math.sqrt(num);
-        for(let i=2;i<=sqrt;i++){
-            if(num%sqrt === 0){
+        for(let i=2; i<=sqrt; i++){
+            if(num%i === 0){
                 return false;
             }
         }
