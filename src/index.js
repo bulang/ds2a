@@ -1,7 +1,7 @@
 /*
  * @Author: liu wang wang
  * @Date: 2020-05-13 11:30:26
- * @LastEditTime: 2020-05-26 15:51:01
+ * @LastEditTime: 2020-05-27 09:18:03
  * @LastEditors: liu wang wang
  * @Description: 数据结构测试
  * @FilePath: \DataStructuresAndAlgorithms\src\index.js
@@ -163,24 +163,3 @@ import HashTable from './structures/HashTable'
 // console.log(hashTable.size());
 // console.log(hashTable.isEmpty());
 // console.log(hashTable);
-
-function com(i,j){
-    if(j===0){
-        return 1;
-    }else if(i===j){
-        return 1
-    }else{
-        return com(i-1,j-1)+com(i-1,j)
-    }
-}
-
-function fn(num){
-    for(let i=0; i<num; i++){
-        for(let j = 0; j<= i; j++){
-            document.write(com(i,j)+" ");
-        }
-        document.write('行数：'+ i + '</br>');
-    }
-}
-fn(14);
-console.log(com(13,6));

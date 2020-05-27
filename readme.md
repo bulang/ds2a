@@ -3,6 +3,7 @@
 2. [队列](./notes/Queue.md)
 3. [链表](./notes/LinkedList.md)
 4. [集合](./notes/Set.md)
+5. [哈希表](./notes/HashTable.md)
 > 联系我
 
 ![联系我](./static/callme.png)
