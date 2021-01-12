@@ -1,7 +1,7 @@
 /*
  * @Author: liu wang wang
  * @Date: 2020-05-13 11:30:26
- * @LastEditTime: 2020-06-05 16:35:52
+ * @LastEditTime: 2021-01-12 20:41:15
  * @LastEditors: liu wang wang
  * @Description: 数据结构测试
  * @FilePath: \DataStructuresAndAlgorithms\src\index.js
@@ -13,6 +13,7 @@ import SingleLinkedList from './structures/LinkedList/SingleLinkedList'
 import DoubleLinkedList from './structures/LinkedList/DoubleLinkedList'
 import SetO from './structures/Set'
 import HashTable from './structures/HashTable'
+import Sort from './algorithms/Sort'
 //栈实现十进制转二进制
 // const dec2bin = (num)=>{
 //     const s = new Stack();
@@ -135,7 +136,7 @@ import HashTable from './structures/HashTable'
 // console.log(mSet.isSuperset(set, set2))
 // console.log(set.toString());
 // 测试哈希表
-const hashTable = new HashTable();
+// const hashTable = new HashTable();
 // hashTable.put('name','bulang');
 // hashTable.put(5,18);
 // hashTable.put(60,18);
@@ -163,3 +164,10 @@ const hashTable = new HashTable();
 // console.log(hashTable.size());
 // console.log(hashTable.isEmpty());
 // console.log(hashTable);
+// 测试排序算法
+const sort = new Sort();
+const arr = [78,89,1,2,3,5,6,9,4,6,2,456,1235,35,96,56,36];
+console.log(sort.bubbleSort(arr));
+console.log(sort.selectSort(arr));
+console.log(sort.insertionSort(arr));
+console.log(sort.shellSort(arr));
