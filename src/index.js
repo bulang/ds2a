@@ -1,7 +1,7 @@
 /*
  * @Author: liu wang wang
  * @Date: 2020-05-13 11:30:26
- * @LastEditTime: 2021-01-12 20:41:15
+ * @LastEditTime: 2021-01-19 19:13:24
  * @LastEditors: liu wang wang
  * @Description: 数据结构测试
  * @FilePath: \DataStructuresAndAlgorithms\src\index.js
@@ -171,3 +171,4 @@ console.log(sort.bubbleSort(arr));
 console.log(sort.selectSort(arr));
 console.log(sort.insertionSort(arr));
 console.log(sort.shellSort(arr));
+console.log(sort.quickSort(arr));
