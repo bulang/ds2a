@@ -1,3 +1,4 @@
+
 const { resolve } = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -22,7 +23,7 @@ module.exports = {
     ],
     devServer:{
         contentBase:resolve(__dirname,'dist'),
-        port:3000,
+        port:3001,
         open:true,
         compress:true
     }

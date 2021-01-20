@@ -1,7 +1,7 @@
 /*
  * @Author: liu wang wang
  * @Date: 2020-05-13 11:30:26
- * @LastEditTime: 2021-01-19 19:13:24
+ * @LastEditTime: 2021-01-20 17:26:53
  * @LastEditors: liu wang wang
  * @Description: 数据结构测试
  * @FilePath: \DataStructuresAndAlgorithms\src\index.js
@@ -166,9 +166,23 @@ import Sort from './algorithms/Sort'
 // console.log(hashTable);
 // 测试排序算法
 const sort = new Sort();
-const arr = [78,89,1,2,3,5,6,9,4,6,2,456,1235,35,96,56,36];
+const arr = [];
+const n = 100000;
+for(var i=0; i < n; i++){
+  arr.push(~~(Math.random()*n))
+};
+console.time('bubble');
 console.log(sort.bubbleSort(arr));
+console.timeEnd('bubble');
+console.time('select');
 console.log(sort.selectSort(arr));
+console.timeEnd('select');
+console.time('insertion');
 console.log(sort.insertionSort(arr));
+console.timeEnd('insertion');
+console.time('shell');
 console.log(sort.shellSort(arr));
+console.timeEnd('shell');
+console.time('quick');
 console.log(sort.quickSort(arr));
+console.timeEnd('quick');

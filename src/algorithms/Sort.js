@@ -3,7 +3,7 @@ import { timingSafeEqual } from "crypto";
 /*
  * @Author: liu wang wang
  * @Date: 2020-06-28 13:56:41
- * @LastEditTime: 2021-01-19 20:44:58
+ * @LastEditTime: 2021-01-20 17:07:23
  * @LastEditors: liu wang wang
  * @Description: 排序算法大合集
  * @FilePath: \DataStructuresAndAlgorithms\src\algorithms\Sort.js
@@ -104,25 +104,29 @@ class Sort {
         const arrCopy = [...array];
         let len = arrCopy.length;
         this._QSort(arrCopy, 0, len-1);
-        console.log(arrCopy);
         return arrCopy;
     }
     _QSort(arr, low, height){
-        let i = low,
-              j = height,
-              pivot = this.getPivot(arr, low, height);
-        while(i<j){
-            while(arr[i] < arr[pivot]) {
-                i++;
-            }
-            while(arr[j] > arr[pivot]) {
+        let i = low+1,
+            j = height,
+            pivot = this.getPivot(arr, low, height);
+        if(i>=j){
+            return
+        } 
+        while(i!=j) {
+            while(arr[j] >= arr[pivot] && i<j) {
                 j--;
             }
-            this.swap(arr, i, j);
+            while(arr[i] <= arr[pivot] && i<j) {
+                i++;
+            }
+            if(i!=j){
+                this.swap(arr, i, j);
+            }
         }
         this.swap(arr, pivot, i);
-        // this._QSort(arr, pivot, i-1);
-        // this._QSort(arr, i+1, height);
+        this._QSort(arr, pivot, i-1);
+        this._QSort(arr, i+1, height);
     }
     getPivot(arr, low, height ) {
         const middle = low + Math.floor((height-low)/2);
